@@ -6,7 +6,7 @@
 		photoPreview: null,
 		uploaded: false,
 		uploading: false,
-		user: @entangle('user'),
+		user: @entangle('user').live,
 		init() {
 			window.addEventListener('avatar-ev', () => {
 				photoPreview = null;

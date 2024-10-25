@@ -71,7 +71,7 @@ trait ActionsTrait
 		if ($action->success) {
 			$message = $action->message;
 
-			$this->emit('saved');
+			$this->dispatch('saved');
 		}
 
 		if ($action->errors) {

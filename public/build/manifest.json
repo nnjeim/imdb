@@ -1,0 +1,13 @@
+{
+  "resources/js/index.js": {
+    "file": "assets/index-MITdrtnF.js",
+    "name": "index",
+    "src": "resources/js/index.js",
+    "isEntry": true
+  },
+  "resources/scss/app.scss": {
+    "file": "assets/app-CTxOIKGm.css",
+    "src": "resources/scss/app.scss",
+    "isEntry": true
+  }
+}

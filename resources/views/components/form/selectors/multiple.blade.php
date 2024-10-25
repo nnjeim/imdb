@@ -13,6 +13,10 @@
 	'showSelected' => false,
 ])
 
+@php
+$model = $attributes->whereStartsWith('wire:model')->first();
+@endphp
+
 <div {{ $attributes->whereDoesntStartWith('wire:model')->merge(['class' => 'w-full relative']) }}
 	 x-data="{
 	 	clear() {
@@ -34,12 +38,12 @@
 
 			/* on deselect event */
 			if (this.onDeselectEvent) {
-				$wire.emit(this.onDeselectEvent, value[this.optionValue]);
+				$wire.dispatch(this.onDeselectEvent, {val: value[this.optionValue]});
 			}
 	 	},
-	 	values: @entangle($attributes->wire('model')),
+	 	values: @entangle($model).live,
 	 	oldValues: '',
-	 	options: @entangle($options),
+	 	options: @entangle($options).live,
 	 	filteredOptions: [],
 	 	optionValue: @js($optionValue),
 	 	optionName: @js($optionName),
@@ -55,7 +59,7 @@
 
 				/* on select event */
 				if (this.onSelectEvent) {
-					$wire.emit(this.onSelectEvent, option[this.optionValue]);
+					$wire.dispatch(this.onSelectEvent, {val: option[this.optionValue]});
 				}
 			}
 			/* on deselect */
@@ -64,7 +68,7 @@
 				this.values.splice(valueIndex, 1);
 				/* on deselect event */
 				if (this.onDeselectEvent) {
-					$wire.emit(this.onDeselectEvent, option[this.optionValue]);
+					$wire.dispatch(this.onDeselectEvent, {val: option[this.optionValue]});
 				}
 			}
 

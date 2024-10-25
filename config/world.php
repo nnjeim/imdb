@@ -1,6 +1,7 @@
 <?php
 
 return [
+	'connection' => env('DB_CONNECTION', 'mysql'),
 	/*
 	|--------------------------------------------------------------------------
 	| Allowed countries to be loaded

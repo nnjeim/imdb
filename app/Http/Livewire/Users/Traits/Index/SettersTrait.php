@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Users\Traits\Index;
 
+use Livewire\Attributes\On;
+
 trait SettersTrait
 {
 	/**
@@ -77,6 +79,7 @@ trait SettersTrait
 	 * @param  int  $id
 	 * @return void
 	 */
+	#[On('toggleSelect')]
 	public function toggleSelect(int $id): void
 	{
 		$selectedRecords = $this->selectedRecords;
@@ -99,6 +102,7 @@ trait SettersTrait
 	 * @param  int|null  $id
 	 * @return void
 	 */
+	#[On('confirmRecordDeletion')]
 	public function confirmRecordDeletion(?int $id = null): void
 	{
 		if ($id !== null) {

@@ -1,10 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import "buttons";
-@import "form";
-@import "micons";
-@import "table";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components.css';
+@import 'tailwindcss/utilities.css';
+@import './buttons';
+@import './form';
+@import './micons';
+@import './table';
 
 [x-cloak] {
     display: none !important;

@@ -36,7 +36,7 @@
 		open: false,
 		optionName: @js($optionName),
 		optionValue: @js($optionValue),
-		options: @entangle($options).defer,
+		options: @entangle($options),
 		revertToOldStateOnClear: @js($revertToOldStateOnClear),
 		searchText: '',
 		selectOption(option) {
@@ -48,11 +48,11 @@
 
 			/* on click event */
 			if (this.onSelectEvent) {
-				$wire.emitSelf(this.onSelectEvent, option[this.optionValue]);
+				$wire.dispatch(this.onSelectEvent, {val: option[this.optionValue]});
 			}
 		},
 		showClearButton: @js($showClearButton),
-		value: @entangle($attributes->wire('model')),
+		value: @entangle($attributes->wire('model')).live,
 	 }"
 	 x-init="() => {
 		/* set initial name */

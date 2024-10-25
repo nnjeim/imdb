@@ -17,10 +17,6 @@ class Index extends Component
 	use WithToasts;
 	use WithVerticalTabs;
 
-	protected $listeners = [
-		//
-	];
-
 	public function mount()
 	{
 		/*-- init tabs--*/

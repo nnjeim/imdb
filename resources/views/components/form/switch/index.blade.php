@@ -3,7 +3,7 @@
 	'toggleOffLabel' => null,
 ])
 
-<div x-cloak x-data="{value: @entangle($attributes->wire('model'))}" x-on:click="value = +value === 1 ? 0 : 1">
+<div x-cloak x-data="{value: @entangle($attributes->wire('model')).live}" x-on:click="value = +value === 1 ? 0 : 1">
 	<template x-if="+value === 1">
 		<div class="flex items-center">
 			<x-micon.toggle_on />

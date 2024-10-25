@@ -1,4 +1,4 @@
-<div x-data="{show: @entangle('show'), message: @entangle('message'), status: @entangle('status')}"
+<div x-data="{show: @entangle('show').live, message: @entangle('message').live, status: @entangle('status').live}"
      class="w-full mb-1"
      x-bind:class="{
             	'bg-status-success': status === 'success',

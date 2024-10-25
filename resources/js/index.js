@@ -1,4 +1,4 @@
-import Alpine from 'alpinejs';
+import { Livewire, Alpine } from '../../vendor/livewire/livewire/dist/livewire.esm';
 import usersRowData from './users/usersRowData';
 import usersBulkActions from './users/usersBulkActions';
 import recordsRowData from './records/recordsRowData';
@@ -9,5 +9,5 @@ Alpine.data('usersBulkActions', usersBulkActions);
 Alpine.data('recordsRowData', recordsRowData);
 Alpine.data('recordsBulkActions', recordsBulkActions);
 
+Livewire.start();
 window.Alpine = Alpine;
-Alpine.start();

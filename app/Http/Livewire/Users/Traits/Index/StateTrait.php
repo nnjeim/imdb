@@ -8,6 +8,8 @@ trait StateTrait
 {
 	public int $perPage = 10;
 
+	public int $page = 1;
+
 	public array $perPageOptions = ['10', '20', '50'];
 
 	public array $selectedRecords = [];

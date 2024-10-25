@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Records\Traits\Index;
 
 use App\Actions\Record;
+use Livewire\Attributes\On;
 
 trait ActionsTrait
 {
@@ -102,7 +103,7 @@ trait ActionsTrait
 
 			$this->unselectAllRecords();
 
-			$this->emit('refreshLogs-ev');
+			$this->dispatch('refreshLogs-ev');
 		}
 
 		if ($action->errors) {
@@ -119,6 +120,7 @@ trait ActionsTrait
 	 * @param int|null $id
 	 * @return void
 	 */
+	#[On('restoreRecords')]
 	public function restoreRecords(?int $id = null): void
 	{
 		// permission
@@ -147,7 +149,7 @@ trait ActionsTrait
 
 			$this->unselectAllRecords();
 
-			$this->emit('refreshLogs-ev');
+			$this->dispatch('refreshLogs-ev');
 		}
 
 		if ($action->errors) {
@@ -161,6 +163,6 @@ trait ActionsTrait
 
 	public function exportUrlProperty(): void
 	{
-		$this->dispatchBrowserEvent('setExportUrlProperty-ev', ['url' => $this->getExportUrlProperty()]);
+		$this->dispatch('setExportUrlProperty-ev', ['url' => $this->getExportUrlProperty()]);
 	}
 }

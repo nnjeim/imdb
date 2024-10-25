@@ -15,10 +15,9 @@
 	<!-- Fonts -->
 	<link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 	<!-- Styles -->
-	<link rel="stylesheet" href="{{ mix('css/app.css') }}">
+	@vite('resources/scss/app.scss')
 	<!-- Scripts -->
-	<script type="application/javascript" src="{{ mix('js/vendor.js') }}" defer></script>
-	<script type="application/javascript" src="{{ mix('js/index.js') }}" defer></script>
+	@vite('resources/js/index.js')
 	@livewireStyles
 </head>
 <body class="font-sans antialiased">
@@ -29,6 +28,6 @@
 		{{ $slot }}
 	</main>
 </div>
-@livewireScripts
+@livewireScriptConfig
 </body>
 </html>

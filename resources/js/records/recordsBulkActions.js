@@ -23,7 +23,7 @@ export default () => ({
     }
   },
   callAction() {
-    this.$wire.emit(this.action);
+    this.$wire.dispatch(this.action);
     this.initState();
   },
 });

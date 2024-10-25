@@ -1,6 +1,6 @@
 <div
 	x-data="{
-		notifications: @entangle('notifications'),
+		notifications: @entangle('notifications').live,
 		count: 0,
 		countUnread() {
 			const totalCount = this

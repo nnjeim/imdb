@@ -16,6 +16,8 @@ trait StateTrait
 		]
 	];
 
+	public array $roles = [];
+
 	public string $activeTab = 'info';
 
 	public array $tabs = [

@@ -42,11 +42,10 @@ class Index extends Component
 		'sortDirection' => ['except' => 'desc'],
 	];
 
-	protected $listeners = [
-		'toggleSelect',
-		'confirmRecordDeletion',
-		'restoreRecords',
-	];
+	public function mount()
+	{
+		$this->setPage($this->page);
+	}
 
 	/**
 	 * @return Factory|View|Application

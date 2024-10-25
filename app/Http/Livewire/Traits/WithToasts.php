@@ -13,7 +13,7 @@ trait WithToasts
 	 */
 	public function toast(string $message, string $title = 'Congratulations!', string $type = 'success'): void
 	{
-		$this->dispatchBrowserEvent('toast-ev', ['message' => $message, 'title' => $title, 'type' => $type]);
+		$this->dispatch('toast-ev', ['message' => $message, 'title' => $title, 'type' => $type]);
 	}
 
 	/**

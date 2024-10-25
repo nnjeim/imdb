@@ -22,17 +22,17 @@ class Row extends Component
 
 	public function toggleSelect()
 	{
-		$this->emitUp('toggleSelect', $this->rowData['id']);
+		$this->dispatch('toggleSelect', $this->rowData['id']);
 	}
 
 	public function destroyRecord()
 	{
-		$this->emitUp('confirmRecordDeletion', $this->rowData['id']);
+		$this->dispatch('confirmRecordDeletion', $this->rowData['id']);
 	}
 
 	public function restoreRecord()
 	{
-		$this->emitUp('restoreRecords', $this->rowData['id']);
+		$this->dispatch('restoreRecords', $this->rowData['id']);
 	}
 
 	/**
